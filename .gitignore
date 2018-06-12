@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+api/src/test/
+cms/src/test/
+cms/target/
+common/src/test/
+common/target/

@@ -1,11 +1,15 @@
 package com.self.cms.bussiness.controller;
 
 
+import com.self.cms.bussiness.service.ITestService;
 import com.self.cms.bussiness.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -17,7 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
+    @Autowired
+    private ITestService testService;
 
     @RequestMapping("/")
     public ModelAndView index() throws InterruptedException {
@@ -28,10 +34,23 @@ public class IndexController {
     }
 
     @Async
-    private void async() throws InterruptedException {
+    void async() throws InterruptedException {
         for (int i= 0;i<1000;i++){
             System.out.println("async"+i);
         }
         System.out.println("async-end");
+    }
+
+    /**
+     * 该方法提供了一个使用activeMQ生产者的实例
+     * 调用该方法，将发送数据到消息队列
+     * @param message 消息内容
+     * @return
+     */
+    @PostMapping("/sendMessage")
+    public @ResponseBody
+    String sendMessage(@RequestParam("message") String message){
+        testService.sendMessage(message);
+        return "success";
     }
 }
