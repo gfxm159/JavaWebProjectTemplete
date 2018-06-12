@@ -1,7 +1,8 @@
 package com.self.cms.system.config.mybatis;
 
 
-import com.chengfengfeng.system.config.datasource.MyDataSourceConfigure;
+
+import com.self.cms.system.config.datasource.MyDataSourceConfigure;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;

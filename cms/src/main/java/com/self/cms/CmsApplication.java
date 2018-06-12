@@ -3,10 +3,16 @@ package com.self.cms;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
 
-@EnableAutoConfiguration
-@SpringBootApplication
+@EnableAsync
+@EnableTransactionManagement
+@ServletComponentScan
+@EnableScheduling
 @MapperScan(basePackages = "com.self.common.persistence.mapper")
 public class CmsApplication {
 

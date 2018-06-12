@@ -23,7 +23,7 @@ public class LogAop {
 
     public Log _logger = LogFactory.get();
 
-    @Pointcut("execution(public * com.cheng.bussiness.controller..*.*(..))")
+    @Pointcut("execution(public * com.self.cms.bussiness.controller..*.*(..))")
     public void cut(){}
 
     @Around("cut()")
