@@ -30,7 +30,7 @@
         <pagehelper.starter.version>1.2.5</pagehelper.starter.version>
         <mybatis.spring.version>1.2.4</mybatis.spring.version>
         <hutool-all.version>4.0.5</hutool-all.version>
-        <mapper.starter.version>2.0.3-beta1</mapper.starter.version>
+        <mapper.starter.version>2.0.2</mapper.starter.version>
     </properties>
 
     <dependencies>

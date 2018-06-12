@@ -13,6 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableTransactionManagement
 @ServletComponentScan
 @EnableScheduling
+@EnableAutoConfiguration
 @MapperScan(basePackages = "com.self.common.persistence.mapper")
 public class CmsApplication {
 
