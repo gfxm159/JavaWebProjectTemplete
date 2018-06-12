@@ -3,6 +3,7 @@ package com.self.cms.bussiness.controller;
 
 import com.self.cms.bussiness.service.ITestService;
 import com.self.cms.bussiness.service.UserService;
+import com.self.common.persistence.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
@@ -28,7 +29,7 @@ public class IndexController {
     @RequestMapping("/")
     public ModelAndView index() throws InterruptedException {
         ModelAndView mv = new ModelAndView();
-//        User user = userService.getUser(1);
+        User user = userService.getUser(1);
         mv.setViewName("/index");
         return mv;
     }
