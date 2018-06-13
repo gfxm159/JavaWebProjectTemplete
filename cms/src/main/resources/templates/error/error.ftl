@@ -4,7 +4,7 @@
 </head>
 <#escape x as x?html>
 <body>
-    #{msg}
+errorMsg: ${errorMsg}
 </body>
 </#escape>
 </html>

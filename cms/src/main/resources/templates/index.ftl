@@ -4,7 +4,7 @@
 </head>
 <#escape x as x?html>
 <body>
-    hello
+    hello,${user}
 </body>
 </#escape>
 </html>
