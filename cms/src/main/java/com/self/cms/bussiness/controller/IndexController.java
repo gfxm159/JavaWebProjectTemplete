@@ -2,7 +2,7 @@ package com.self.cms.bussiness.controller;
 
 
 import com.self.cms.bussiness.service.ITestService;
-import com.self.cms.bussiness.service.UserService;
+import com.self.cms.bussiness.service.RedisService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -23,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
     @Autowired
-    private UserService userService;
+    private RedisService redisService;
     @Autowired
     private ITestService testService;
 
