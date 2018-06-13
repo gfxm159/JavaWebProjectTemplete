@@ -166,7 +166,11 @@
 
             注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
          -->
-        <table tableName="user" domainObjectName="User" />
+        <table tableName="auth_user" domainObjectName="AuthUser" />
+        <table tableName="auth_role_permission" domainObjectName="AuthRolePermission" />
+        <table tableName="auth_user_role" domainObjectName="AuthUserRole" />
+        <table tableName="auth_permission" domainObjectName="AuthPermission" />
+        <table tableName="auth_role" domainObjectName="AuthRole" />
 
     </context>
 </generatorConfiguration>

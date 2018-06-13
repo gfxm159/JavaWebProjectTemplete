@@ -3,15 +3,14 @@ package com.self.cms.bussiness.controller;
 
 import com.self.cms.bussiness.service.ITestService;
 import com.self.cms.bussiness.service.UserService;
-import com.self.common.persistence.entity.User;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -25,14 +24,6 @@ public class IndexController {
     private UserService userService;
     @Autowired
     private ITestService testService;
-
-    @RequestMapping("/")
-    public ModelAndView index() throws InterruptedException {
-        ModelAndView mv = new ModelAndView();
-        User user = userService.getUser(1);
-        mv.setViewName("/index");
-        return mv;
-    }
 
     @Async
     void async() throws InterruptedException {
@@ -48,10 +39,15 @@ public class IndexController {
      * @param message 消息内容
      * @return
      */
+    @RequiresPermissions("send")
     @PostMapping("/sendMessage")
     public @ResponseBody
     String sendMessage(@RequestParam("message") String message){
         testService.sendMessage(message);
         return "success";
+    }
+    @GetMapping("/login")
+    public String loginPage(){
+        return "index";
     }
 }

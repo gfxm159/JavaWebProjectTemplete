@@ -1,11 +1,11 @@
-package com.self.common.persistence.model;
+package com.self.common.persistence.entity;
 
+import com.self.common.persistence.base.BaseEntity;
 import javax.persistence.*;
 
-@Table(name = "test_table")
-public class TestTable {
+@Table(name = "auth_role")
+public class AuthRole extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
@@ -35,6 +35,6 @@ public class TestTable {
      * @param name
      */
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 }
