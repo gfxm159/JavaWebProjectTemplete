@@ -9,8 +9,10 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -24,6 +26,15 @@ public class IndexController {
     private UserService userService;
     @Autowired
     private ITestService testService;
+
+    @RequestMapping("/")
+    public ModelAndView index() throws InterruptedException {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/index");
+        mv.addObject("user","chengzhangheng");
+//        throw  new InterruptedException();
+        return mv;
+    }
 
     @Async
     void async() throws InterruptedException {
