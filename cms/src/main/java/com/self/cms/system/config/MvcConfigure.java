@@ -25,8 +25,10 @@ public class MvcConfigure implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**");
-        registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**")
+                .excludePathPatterns("*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+        registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/**")
+                .excludePathPatterns("*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
     }
 
     /**
