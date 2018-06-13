@@ -3,6 +3,7 @@ package com.self.cms.system.exception.controller;
 
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
+import com.alibaba.fastjson.JSON;
 import org.springframework.boot.autoconfigure.web.servlet.error.AbstractErrorController;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ import java.util.Map;
 /**
  * springboot默认出现异常会抛到/error路径
  * 在此方法内包含了返回view或者返回json
- * @author chengfengfeng
+ * @author self
  * @date 2018/6/7
  */
 @Controller
@@ -52,7 +53,7 @@ public class ErrorController extends AbstractErrorController {
          * 返回前端数据
          */
         if (!isJsonRequest(request)) {
-            ModelAndView mv = new ModelAndView("/error");
+            ModelAndView mv = new ModelAndView("/error/error");
             mv.addObject("errorMsg", errorMsg);
             return mv;
         } else {
@@ -121,6 +122,7 @@ public class ErrorController extends AbstractErrorController {
         try {
             responseOutputStream = response.getOutputStream();
             response.setStatus(HttpServletResponse.SC_OK);
+            responseOutputStream.write(JSON.toJSONBytes(map));
             output.writeTo(responseOutputStream);
             output.flush();
             response.flushBuffer();
