@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html>
 <head>
+    <#include "common/header.ftl"/>
 </head>
-<#escape x as x?html>
 <body>
-    hello,${user}
+
+    <#include "common/footer.ftl"/>
 </body>
-</#escape>
 </html>

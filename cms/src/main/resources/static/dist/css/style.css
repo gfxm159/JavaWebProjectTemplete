@@ -1,0 +1,4 @@
+/*AdminLTE有一个BUG,左侧菜单栏滚动条会显示出来,使用此CSS可隐藏滚动条并且可以滚动*/
+.scll-container::-webkit-scrollbar {
+    display: none;
+}

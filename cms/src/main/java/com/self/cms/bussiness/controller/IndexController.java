@@ -27,14 +27,6 @@ public class IndexController {
     @Autowired
     private ITestService testService;
 
-    @RequestMapping("/")
-    public ModelAndView index() throws InterruptedException {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("/index");
-        mv.addObject("user","chengzhangheng");
-//        throw  new InterruptedException();
-        return mv;
-    }
 
     @Async
     void async() throws InterruptedException {
@@ -57,8 +49,5 @@ public class IndexController {
         testService.sendMessage(message);
         return "success";
     }
-    @GetMapping("/login")
-    public String loginPage(){
-        return "index";
-    }
+
 }
