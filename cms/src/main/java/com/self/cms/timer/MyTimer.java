@@ -14,5 +14,6 @@ public class MyTimer {
     @Scheduled(cron = "* 0/1 * * * *")
     public void showLog(){
 //        System.out.println("====*running*====");
+//        System.out.println("***********当前时间："+System.currentTimeMillis());
     }
 }
