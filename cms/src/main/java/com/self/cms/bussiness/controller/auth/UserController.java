@@ -12,17 +12,18 @@ import java.util.Map;
 
 @Controller
 public class UserController {
+
+
     @PostMapping("/login")
-    public
     @ResponseBody
-    String  login(HttpServletRequest request,String username,String password) throws Exception{
-        UsernamePasswordToken usernamePasswordToken=new UsernamePasswordToken(username,password);
+    public String login(HttpServletRequest request, String username, String password) throws Exception {
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(usernamePasswordToken);   //完成登录
 
             return "success";
-        } catch(Exception e) {
+        } catch (Exception e) {
             return "fail";//返回登录页面
         }
     }
