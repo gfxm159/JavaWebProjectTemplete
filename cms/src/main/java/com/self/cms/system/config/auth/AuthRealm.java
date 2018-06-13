@@ -56,7 +56,9 @@ public class AuthRealm extends AuthorizingRealm {
             for(AuthRolePermission authRolePermission:authRolePermissionList){
                 AuthPermission authPermission = authPermissionMapper.
                         selectByPrimaryKey(authRolePermission.getPermissionId());
-                permissionList.add(authPermission.getUrl());
+                if(authPermission!=null) {
+                    permissionList.add(authPermission.getPermission());
+                }
             }
         }
         SimpleAuthorizationInfo info=new SimpleAuthorizationInfo();
