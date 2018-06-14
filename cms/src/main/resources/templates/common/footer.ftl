@@ -31,3 +31,5 @@
 <script src="${base}/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="${base}/dist/js/demo.js"></script>
+<!--layer-->
+<script src="${base}/plugins/layer/layer.js"></script>

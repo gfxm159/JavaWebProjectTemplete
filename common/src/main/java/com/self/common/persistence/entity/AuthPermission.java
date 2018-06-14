@@ -34,6 +34,8 @@ public class AuthPermission extends BaseEntity {
      */
     private Integer flag;
 
+    private String icon;
+
     /**
      * @return id
      */
@@ -136,5 +138,19 @@ public class AuthPermission extends BaseEntity {
      */
     public void setFlag(Integer flag) {
         this.flag = flag;
+    }
+
+    /**
+     * @return icon
+     */
+    public String getIcon() {
+        return icon;
+    }
+
+    /**
+     * @param icon
+     */
+    public void setIcon(String icon) {
+        this.icon = icon == null ? null : icon.trim();
     }
 }

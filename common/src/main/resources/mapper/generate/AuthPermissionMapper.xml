@@ -11,5 +11,6 @@
     <result column="permission" jdbcType="VARCHAR" property="permission" />
     <result column="p_id" jdbcType="INTEGER" property="pId" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
   </resultMap>
 </mapper>
