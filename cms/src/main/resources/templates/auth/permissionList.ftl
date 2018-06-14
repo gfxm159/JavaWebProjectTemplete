@@ -29,6 +29,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 bg-white">
+                            <div class="container">
                             <div class="col-md-12">
                                 <h4>菜单列表</h4>
                             </div>
@@ -60,9 +61,11 @@
                                     </#list>
                                 </ul>
                             </nav>
+                            </div>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-7 bg-white">
+                            <div class="container">
                             <div class="col-md-12">
                                 <h4>权限列表<label id="menuLable"></label></h4>
                             </div>
@@ -77,6 +80,7 @@
                                 <tbody id="permissionTable">
                                 </tbody>
                             </table>
+                            </div>
                             <div class="col-md-12" id="btnGroup">
 
                             </div>
@@ -93,23 +97,12 @@
     function getPermissionList(id,name) {
         $.post("/permission/getPermissionListById",{id:id},function (data) {
             $("#menuLable").html("("+name+")");
-            $("#btnGroup").html("<button class=\"btn btn-primary\" onclick=\"addPermission("+id+")\">添加权限</button>")
             var html = "";
             for(var i=0;i<data.length;i++){
                 html +="<tr><td>"+(i+1)+"</td><td>"+data[i].name+"</td><td>"+data[i].permission+"</td></tr>";
             }
             $("#permissionTable").html(html);
         })
-    }
-    function addPermission(id){
-        layer.open({
-            type: 1,
-            skin: 'layui-layer-demo', //样式类名
-            closeBtn: 0, //不显示关闭按钮
-            anim: 2,
-            shadeClose: true, //开启遮罩关闭
-            content: "功能待完善，敬请很期待"
-        });
     }
 </script>
 </body>
