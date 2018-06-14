@@ -9,5 +9,7 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="permission" jdbcType="VARCHAR" property="permission" />
+    <result column="p_id" jdbcType="INTEGER" property="pId" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
 </mapper>

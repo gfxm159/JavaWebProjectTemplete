@@ -9,7 +9,7 @@ public class AuthPermission extends BaseEntity {
     private Integer id;
 
     /**
-     * 权限名称
+     * 菜单名称
      */
     private String name;
 
@@ -22,6 +22,17 @@ public class AuthPermission extends BaseEntity {
      * 具体权限，建议使用英文，shiro中使用@RequiresPermission注解的值与此对应
      */
     private String permission;
+
+    /**
+     * 父级ID
+     */
+    @Column(name = "p_id")
+    private Integer pId;
+
+    /**
+     * 0标签 1权限
+     */
+    private Integer flag;
 
     /**
      * @return id
@@ -38,18 +49,18 @@ public class AuthPermission extends BaseEntity {
     }
 
     /**
-     * 获取权限名称
+     * 获取菜单名称
      *
-     * @return name - 权限名称
+     * @return name - 菜单名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置权限名称
+     * 设置菜单名称
      *
-     * @param name 权限名称
+     * @param name 菜单名称
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
@@ -89,5 +100,41 @@ public class AuthPermission extends BaseEntity {
      */
     public void setPermission(String permission) {
         this.permission = permission == null ? null : permission.trim();
+    }
+
+    /**
+     * 获取父级ID
+     *
+     * @return p_id - 父级ID
+     */
+    public Integer getpId() {
+        return pId;
+    }
+
+    /**
+     * 设置父级ID
+     *
+     * @param pId 父级ID
+     */
+    public void setpId(Integer pId) {
+        this.pId = pId;
+    }
+
+    /**
+     * 获取0标签 1权限
+     *
+     * @return flag - 0标签 1权限
+     */
+    public Integer getFlag() {
+        return flag;
+    }
+
+    /**
+     * 设置0标签 1权限
+     *
+     * @param flag 0标签 1权限
+     */
+    public void setFlag(Integer flag) {
+        this.flag = flag;
     }
 }

@@ -1,13 +1,8 @@
 package com.self.cms.system.config.auth;
 
-import com.self.common.persistence.entity.AuthPermission;
-import com.self.common.persistence.entity.AuthRolePermission;
-import com.self.common.persistence.entity.AuthUser;
-import com.self.common.persistence.entity.AuthUserRole;
-import com.self.common.persistence.mapper.generate.AuthPermissionMapper;
-import com.self.common.persistence.mapper.generate.AuthRolePermissionMapper;
-import com.self.common.persistence.mapper.generate.AuthUserMapper;
-import com.self.common.persistence.mapper.generate.AuthUserRoleMapper;
+import com.self.cms.bussiness.constants.Constants;
+import com.self.common.persistence.entity.*;
+import com.self.common.persistence.mapper.generate.*;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -28,6 +23,8 @@ public class AuthRealm extends AuthorizingRealm {
     private AuthRolePermissionMapper authRolePermissionMapper;
     @Autowired
     private AuthPermissionMapper authPermissionMapper;
+    @Autowired
+    private AuthUserPermissionMapper authUserPermissionMapper;
     //认证.登录
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
@@ -49,16 +46,33 @@ public class AuthRealm extends AuthorizingRealm {
         authUserRoleSelect.setUserId(authUser.getId());
         List<AuthUserRole> authUserRoleList = authUserRoleMapper.select(authUserRoleSelect);
         List<String> permissionList = new ArrayList<>();
+        //TODO 待优化，查询次数太多，前期不稳定尽量少写sql,
         for (AuthUserRole authUserRole:authUserRoleList){
             AuthRolePermission authRolePermissionSelect = new AuthRolePermission();
             authRolePermissionSelect.setRoleId(authUserRole.getRoleId());
             List<AuthRolePermission> authRolePermissionList = authRolePermissionMapper.select(authRolePermissionSelect);
             for(AuthRolePermission authRolePermission:authRolePermissionList){
+                AuthPermission authPermissionSelect = new AuthPermission();
+                authPermissionSelect.setId(authRolePermission.getPermissionId());
+                authPermissionSelect.setFlag(Constants.权限);
                 AuthPermission authPermission = authPermissionMapper.
-                        selectByPrimaryKey(authRolePermission.getPermissionId());
+                        selectOne(authPermissionSelect);
                 if(authPermission!=null) {
                     permissionList.add(authPermission.getPermission());
                 }
+            }
+        }
+        AuthUserPermission authUserPermissionSelect = new AuthUserPermission();
+        authUserPermissionSelect.setUserId(authUser.getId());
+        List<AuthUserPermission> authUserPermissionList = authUserPermissionMapper.select(authUserPermissionSelect);
+        for(AuthUserPermission authUserPermission:authUserPermissionList){
+            AuthPermission authPermissionSelect = new AuthPermission();
+            authPermissionSelect.setId(authUserPermission.getPermissionId());
+            authPermissionSelect.setFlag(Constants.权限);
+            AuthPermission authPermission = authPermissionMapper.
+                    selectOne(authPermissionSelect);
+            if(authPermission!=null) {
+                permissionList.add(authPermission.getPermission());
             }
         }
         SimpleAuthorizationInfo info=new SimpleAuthorizationInfo();
