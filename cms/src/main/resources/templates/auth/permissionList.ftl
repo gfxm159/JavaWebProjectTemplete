@@ -25,105 +25,96 @@
             </div><!-- /.container-fluid -->
         </div>
         <section class="content">
-            <div class="row">
-                <div class="card col-md-10" style="position: relative; left: 10%; top:10%;">
-                    <div class="card-header ui-sortable-handle" style="cursor: move;">
-                        <h3 class="card-title">
-                            <i class="ion ion-clipboard mr-1"></i>
-                            权限列表
-                        </h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <ul class="todo-list ui-sortable">
-                            <li>
-                                <!-- drag handle -->
-                                <span class="handle ui-sortable-handle">
-                      <i class="fa fa-ellipsis-v"></i>
-                      <i class="fa fa-ellipsis-v"></i>
-                    </span>
-                                <!-- checkbox -->
-                                <input type="checkbox" value="" name="">
-                                <!-- todo text -->
-                                <span class="text">Design a nice theme</span>
-                                <!-- Emphasis label -->
-                                <small class="badge badge-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                                <!-- General tools such as edit or delete-->
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                    <span class="handle ui-sortable-handle">
-                      <i class="fa fa-ellipsis-v"></i>
-                      <i class="fa fa-ellipsis-v"></i>
-                    </span>
-                                <input type="checkbox" value="" name="">
-                                <span class="text">Make the theme responsive</span>
-                                <small class="badge badge-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                    <span class="handle ui-sortable-handle">
-                      <i class="fa fa-ellipsis-v"></i>
-                      <i class="fa fa-ellipsis-v"></i>
-                    </span>
-                                <input type="checkbox" value="" name="">
-                                <span class="text">Let theme shine like a star</span>
-                                <small class="badge badge-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                    <span class="handle ui-sortable-handle">
-                      <i class="fa fa-ellipsis-v"></i>
-                      <i class="fa fa-ellipsis-v"></i>
-                    </span>
-                                <input type="checkbox" value="" name="">
-                                <span class="text">Let theme shine like a star</span>
-                                <small class="badge badge-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                    <span class="handle ui-sortable-handle">
-                      <i class="fa fa-ellipsis-v"></i>
-                      <i class="fa fa-ellipsis-v"></i>
-                    </span>
-                                <input type="checkbox" value="" name="">
-                                <span class="text">Check your messages and notifications</span>
-                                <small class="badge badge-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                    <span class="handle ui-sortable-handle">
-                      <i class="fa fa-ellipsis-v"></i>
-                      <i class="fa fa-ellipsis-v"></i>
-                    </span>
-                                <input type="checkbox" value="" name="">
-                                <span class="text">Let theme shine like a star</span>
-                                <small class="badge badge-secondary"><i class="fa fa-clock-o"></i> 1 month</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer clearfix">
-                        <button type="button" class="btn btn-info float-right"><i class="fa fa-plus"></i> Add item</button>
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="col-md-12">
+                                <h4>菜单列表</h4>
+                            </div>
+                            <nav class="mt-2">
+                                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                                    <!-- Add icons to the links using the .nav-icon class
+                                         with font-awesome or any other icon font library -->
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link active">
+                                            <i class="nav-icon fa fa-dashboard"></i>
+                                            <p>
+                                                系统管理
+                                                <i class="right fa fa-angle-left"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="/permission/permissionList" class="nav-link">
+                                                    <i class="fa fa-heart nav-icon"></i>
+                                                    <p>权限管理</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="./index2.html" class="nav-link">
+                                                    <i class="fa fa-user-md nav-icon"></i>
+                                                    <p>用户管理</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="./index3.html" class="nav-link">
+                                                    <i class="fa fa-heartbeat nav-icon"></i>
+                                                    <p>角色管理</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-table"></i>
+                                            <p>
+                                                试题管理
+
+                                            </p>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-7">
+                            <div class="col-md-12">
+                                <h4>权限列表</h4>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>权限名称</th>
+                                    <th>权限标识</th>
+                                    <th>Username</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
