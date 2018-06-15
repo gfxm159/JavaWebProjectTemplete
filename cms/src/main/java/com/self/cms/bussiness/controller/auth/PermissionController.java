@@ -1,7 +1,9 @@
 package com.self.cms.bussiness.controller.auth;
 
 import com.self.cms.bussiness.service.IPermissionService;
+import com.self.cms.system.config.auth.UserDetails;
 import com.self.common.persistence.entity.AuthPermission;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
