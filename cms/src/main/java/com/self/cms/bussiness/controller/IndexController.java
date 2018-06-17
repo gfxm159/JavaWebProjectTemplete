@@ -42,7 +42,6 @@ public class IndexController {
      * @param message 消息内容
      * @return
      */
-    @RequiresPermissions("send")
     @PostMapping("/sendMessage")
     public @ResponseBody
     String sendMessage(@RequestParam("message") String message){

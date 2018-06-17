@@ -2,3 +2,23 @@
 .scll-container::-webkit-scrollbar {
     display: none;
 }
+/*毛玻璃效果*/
+.blur {
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+    -webkit-filter: blur(5px); /* Chrome, Opera */
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false); /* IE6~IE9 */
+}
+
+.login-bk{
+    width:100%;
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}

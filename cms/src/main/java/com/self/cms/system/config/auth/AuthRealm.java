@@ -35,8 +35,9 @@ public class AuthRealm extends AuthorizingRealm {
         if(authUser!=null){
             password = authUser.getPassword();
         }
+        UserDetails userDetails = new UserDetails(authUser.getLoginName());
         //放入shiro.调用CredentialsMatcher检验密码
-        return new SimpleAuthenticationInfo(authUser, password,this.getClass().getName());
+        return new SimpleAuthenticationInfo(userDetails, password,this.getClass().getName());
     }
     //授权
     @Override
