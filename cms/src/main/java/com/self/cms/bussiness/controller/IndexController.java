@@ -1,6 +1,7 @@
 package com.self.cms.bussiness.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import com.self.cms.bussiness.service.ITestService;
 import com.self.cms.bussiness.service.RedisService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -28,6 +29,11 @@ public class IndexController {
     private ITestService testService;
 
 
+    @ResponseBody
+    @RequestMapping("/redis")
+    public String redis(){
+        return JSON.toJSONString(redisService.getForRedis("cheng"));
+    }
     @Async
     void async() throws InterruptedException {
         for (int i= 0;i<1000;i++){

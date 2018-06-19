@@ -5,7 +5,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 /**
@@ -14,6 +17,7 @@ import org.springframework.util.CollectionUtils;
  * @date 2018/6/13
  */
 public class RedisUtil {
+
 
     private RedisTemplate<String, Object> redisTemplate;
 

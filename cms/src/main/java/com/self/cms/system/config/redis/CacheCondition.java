@@ -1,4 +1,4 @@
-package com.self.common.redis.config;
+package com.self.cms.system.config.redis;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;

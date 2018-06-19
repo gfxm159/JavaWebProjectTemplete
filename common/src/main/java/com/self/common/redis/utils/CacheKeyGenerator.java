@@ -12,9 +12,9 @@ import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 
 /**
+ * 自定义cache key的生成策略
  * Created by chengfengfeng on 2017/12/12.
  */
-@Component
 public class CacheKeyGenerator implements KeyGenerator {
     static final Logger log = LoggerFactory.getLogger(CacheKeyGenerator.class);
     // custom cache key

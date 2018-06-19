@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
@@ -26,9 +27,9 @@ public class MvcConfigure implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+                .excludePathPatterns("/static/**","/build/**","/dist/**","/plugins/**","/assets/","/druid/*");
         registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+                .excludePathPatterns("/static/**","/build/**","/dist/**","/plugins/**","/assets/","/druid/*");
     }
 
     /**
@@ -40,5 +41,9 @@ public class MvcConfigure implements WebMvcConfigurer {
         registry.addMapping("/**").allowedOrigins("*");
     }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
+    }
 
 }

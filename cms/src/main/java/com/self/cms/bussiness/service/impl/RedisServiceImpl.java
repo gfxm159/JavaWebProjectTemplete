@@ -4,6 +4,7 @@ package com.self.cms.bussiness.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.self.cms.bussiness.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,7 @@ public class RedisServiceImpl implements RedisService {
         stringRedisTemplate.opsForValue().set(key, JSON.toJSONString(object));
     }
 
+    @Cacheable(cacheNames = "abc")
     @Override
     public Object getForRedis(String key) {
         return stringRedisTemplate.opsForValue().get(key);
