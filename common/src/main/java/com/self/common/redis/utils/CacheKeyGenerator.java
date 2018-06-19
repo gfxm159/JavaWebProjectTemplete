@@ -4,7 +4,6 @@ import com.google.common.hash.Hashing;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.interceptor.KeyGenerator;
-import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
 
 import java.lang.reflect.Array;

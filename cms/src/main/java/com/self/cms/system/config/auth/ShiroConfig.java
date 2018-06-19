@@ -26,6 +26,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/dist/**", "anon");
         filterChainDefinitionMap.put("/plugins/**", "anon");
         filterChainDefinitionMap.put("/login", "anon");
+        filterChainDefinitionMap.put("/druid/**", "anon");
         //配置退出 过滤器,其中的具体的退出代码Shiro已经替我们实现了
         filterChainDefinitionMap.put("/logout", "logout");
         //<!-- authc:所有url都必须认证通过才可以访问
@@ -34,7 +35,6 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/login");
         // 登录成功后要跳转的链接
         shiroFilterFactoryBean.setSuccessUrl("/index");
-
         //未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
