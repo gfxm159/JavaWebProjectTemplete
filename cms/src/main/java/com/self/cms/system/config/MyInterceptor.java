@@ -43,6 +43,8 @@ public class MyInterceptor implements HandlerInterceptor {
             ip = LOCALHOST_IPV4;
         }
         _logger.info("客户端真实请求ip-->>"+ip);
+        _logger.info("session失效时间-->>"+request.getSession().getMaxInactiveInterval());
+        _logger.info("session配置类-->>"+request.getSession().getClass());
         return true;
     }
 }
