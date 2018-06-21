@@ -13,4 +13,18 @@
     <result column="flag" jdbcType="INTEGER" property="flag" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
   </resultMap>
+  <sql id="Base_Colum_List">
+    id,name,url,permission,p_id,flag,icon
+  </sql>
+    <select id="selectByRoleIds" resultMap="BaseResultMap">
+      select
+      ap.id,ap.name,ap.url,ap.permission,ap.p_id,ap.flag,ap.icon
+      from
+      auth_role_permission rp
+      inner join auth_permission ap on rp.permission_id = ap.id
+      where rp.role_id in 
+      <foreach collection="authUserRoles" item="role" open="(" close=")" separator="," index="num">
+        #{role.roleId}
+      </foreach>
+    </select>
 </mapper>

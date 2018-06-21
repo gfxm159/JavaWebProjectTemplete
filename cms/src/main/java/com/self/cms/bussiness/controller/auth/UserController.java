@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class UserController {
     @Autowired
@@ -22,8 +24,8 @@ public class UserController {
         return "login";
     }
     @PostMapping("/login")
-    public ModelAndView  login(String username,String password) throws Exception{
-        return userService.login(username,password);
+    public ModelAndView  login(HttpServletRequest request, String username, String password) throws Exception{
+        return userService.login(request,username,password);
     }
     @GetMapping("/logout")
     public ModelAndView logout(){

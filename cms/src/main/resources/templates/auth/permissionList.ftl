@@ -3,12 +3,8 @@
 <head>
     <#include "./../common/header.ftl"/>
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-<#include "./../common/topnavbar.ftl"/>
-<#include "./../common/sidebar.ftl"/>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+<body>
+<div class="py-5" >
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -89,8 +85,6 @@
                 </div>
             </div>
         </section>
-    </div>
-<#include "./../common/footerCopyright.ftl"/>
 </div>
     <#include "./../common/footer.ftl"/>
 <script>

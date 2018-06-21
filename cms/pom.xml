@@ -172,6 +172,12 @@
             <artifactId>jsoup</artifactId>
             <version>${org.jsoup.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>2.0.7.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 
