@@ -12,9 +12,10 @@
     <result column="p_id" jdbcType="INTEGER" property="pId" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
   </resultMap>
   <sql id="Base_Colum_List">
-    id,name,url,permission,p_id,flag,icon
+    id,name,url,permission,p_id,flag,icon,weight
   </sql>
     <select id="selectByRoleIds" resultMap="BaseResultMap">
       select
@@ -22,9 +23,10 @@
       from
       auth_role_permission rp
       inner join auth_permission ap on rp.permission_id = ap.id
-      where rp.role_id in 
-      <foreach collection="authUserRoles" item="role" open="(" close=")" separator="," index="num">
+      where rp.role_id in
+      <foreach close=")" collection="authUserRoles" index="num" item="role" open="(" separator=",">
         #{role.roleId}
       </foreach>
+      order by weight desc;
     </select>
 </mapper>

@@ -1,6 +1,10 @@
 package com.self.cms.bussiness.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.self.cms.bussiness.beans.AuthBean;
+import com.self.cms.bussiness.beans.PageIO;
+import com.self.cms.bussiness.beans.PageVO;
 import com.self.cms.bussiness.service.IUserService;
 import com.self.cms.system.config.auth.UserDetails;
 import com.self.common.persistence.entity.AuthPermission;
@@ -91,8 +95,6 @@ public class UserServiceImpl implements IUserService {
                             authBean.getMenuList().add(menu);
                         }
                     }
-
-
             }
         }
         return authBeanList;
@@ -103,5 +105,17 @@ public class UserServiceImpl implements IUserService {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return new ModelAndView("login");
+    }
+
+    @Override
+    public ModelAndView toUserList() {
+        return new ModelAndView("auth/userList");
+    }
+
+    @Override
+    public PageVO getAuthUserList(PageIO pageIO) {
+        Page page = PageHelper.startPage(pageIO.getPage(), pageIO.getRows());
+        authUserMapper.selectUserAndRole();
+        return new PageVO(page);
     }
 }

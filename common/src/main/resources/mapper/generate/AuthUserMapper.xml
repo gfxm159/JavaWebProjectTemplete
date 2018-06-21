@@ -21,4 +21,12 @@
       where
       login_name = #{LoginName}
     </select>
+    <select id="selectUserAndRole" resultType="java.util.Map">
+      select
+      au.login_name as loginName,
+      ar.name as roleName
+      from auth_user au
+      inner join auth_user_role aur on aur.user_id = au.id
+      inner join auth_role ar on ar.id = aur.role_id
+    </select>
 </mapper>

@@ -27,3 +27,7 @@
 <link href="${base}/dist/css/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 <!--your self stylesheet-->
 <link rel="stylesheet" href="${base}/dist/css/style.css"/>
+<#--jqGrid-->
+<link rel="stylesheet" href="${base}/plugins/jqGrid/css/ui.jqgrid-bootstrap4.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">

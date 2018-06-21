@@ -37,6 +37,11 @@ public class AuthPermission extends BaseEntity {
     private String icon;
 
     /**
+     * 权重，决定菜单列表的排序
+     */
+    private Integer weight;
+
+    /**
      * @return id
      */
     public Integer getId() {
@@ -152,5 +157,23 @@ public class AuthPermission extends BaseEntity {
      */
     public void setIcon(String icon) {
         this.icon = icon == null ? null : icon.trim();
+    }
+
+    /**
+     * 获取权重，决定菜单列表的排序
+     *
+     * @return weight - 权重，决定菜单列表的排序
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    /**
+     * 设置权重，决定菜单列表的排序
+     *
+     * @param weight 权重，决定菜单列表的排序
+     */
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

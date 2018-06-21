@@ -1,11 +1,14 @@
 package com.self.cms.bussiness.controller.auth;
 
+import com.self.cms.bussiness.beans.PageIO;
+import com.self.cms.bussiness.beans.PageVO;
 import com.self.cms.bussiness.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,5 +33,16 @@ public class UserController {
     @GetMapping("/logout")
     public ModelAndView logout(){
         return userService.logout();
+    }
+
+    @GetMapping("/toUserList")
+    public ModelAndView toUserList(){
+        return userService.toUserList();
+    }
+
+    @PostMapping("/getAuthUserList")
+    @ResponseBody
+    public PageVO getAuthUserList(PageIO pageIO){
+        return userService.getAuthUserList(pageIO);
     }
 }

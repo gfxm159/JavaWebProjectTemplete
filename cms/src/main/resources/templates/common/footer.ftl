@@ -33,3 +33,9 @@
 <script src="${base}/dist/js/demo.js"></script>
 <!--layer-->
 <script src="${base}/plugins/layer/layer.js"></script>
+<#--jqGrid-->
+<script src="${base}/plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+<script src="${base}/plugins/jqGrid/js/i18n/grid.locale-cn.js"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+
