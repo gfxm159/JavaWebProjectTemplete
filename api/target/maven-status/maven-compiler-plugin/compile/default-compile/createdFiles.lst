@@ -1,0 +1,3 @@
+com\self\api\config\exception\ExceptionControllerAdvice.class
+com\self\api\config\mvc\WebConfig.class
+com\self\api\ApiApplication.class
