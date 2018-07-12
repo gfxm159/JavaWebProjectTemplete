@@ -7,7 +7,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- *
+ * @author ShiXin
+ * @date 2018/7/12 17:13
  */
 @Configuration
 @EnableWebMvc
