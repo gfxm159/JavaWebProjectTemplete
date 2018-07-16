@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * springboot默认出现异常会抛到/error路径
  * 在此方法内包含了返回view或者返回json
- * @author self
+ * @author chengfengfeng
  * @date 2018/6/7
  */
 @Controller

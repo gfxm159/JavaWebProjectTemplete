@@ -6,7 +6,7 @@ import org.springframework.core.env.Environment;
 
 /**
  * Environment 是最早初始的类 包含了系统运行环境的配置 可以注入到任何地方使用
- * @author self
+ * @author chengfengfeng
  * @date 2018/6/13
  */
 @Configuration
